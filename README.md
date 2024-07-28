@@ -35,4 +35,12 @@ http://localhost:80/
 
 ```
 
+### API endpoints
+
+#### Registration
+    - POST /api/register
+#### Projects
+    - GET /api/v1/projects
+    - GET /api/v2/projects # with pagination
+
 Thank You!! :)
