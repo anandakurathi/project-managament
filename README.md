@@ -1,40 +1,38 @@
 ### Project Managment Application
 
+#### Installation
 
-Requirements:
+```
+#clone the repository
+git clone https://github.com/anandakurathi/project-managament.git
 
-Backend (Laravel):
+#navigate to appliction
+cd project-managament
 
-Set up a RESTful API using Laravel to manage projects and tasks.
-Each project should have at least: name, description, start_date, end_date.
-Each task should have at least the following: title, description, due_date, priority (e.g., low, medium, high), and status (e.g., pending, completed).
-Implement routes for creating, retrieving, updating, and deleting projects and tasks.
-Store data in an SQLite database. Use migrations for setting up the database schema.
+#install dependencies 
+compsoer install
 
-Implement authentication and authorization.
-Users should be able to register, log in, and log out.
-Protect the project and task routes to ensure only authenticated users can access them.
-Implement role-based access control (e.g., normal users vs. admin users). Admin users should be able to manage all projects and tasks, while normal users can only manage their own.
-Use middleware to handle API versioning.
-Write tests for your API endpoints using PHPUnit.
+# environment file created when composer install. But, incase needed
+cp .env.example .env
 
+#run application
+./vendor/bin/sail up -d
 
-Plan:
-~~Laravel with Sqlite DB application~~
+# create tes db 
+touch database/database-test.sqlite
 
-~~Laravel 11~~
-user autherisation / authentication let use sanctum for this
-~~users should has roles (admin, common user)~~
-Admin users should be able to view and manage all projects and tasks.
+# database/database.sqlite app DB will be asked to create while migrate run
 
-projects
-~~name, description, start_date, end_date (should be equal or greater)~~
-CRUD with filters
+#run migration & seed 
+php artisn migrate
+php artisn db:seed
 
-tasks
-~~title, description, due_date, priority (e.g., low, medium, high), and status (e.g., pending, in-progress, completed).~~
-CRUD with filters
+# run test
+php artisan test
 
-~~Versioning of API's with middleware~~
+#browse app
+http://localhost:80/
 
-Handle potential errors gracefully.
+```
+
+Thank You!! :)
