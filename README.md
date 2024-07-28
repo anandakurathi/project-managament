@@ -41,6 +41,7 @@ http://localhost:80/
     - POST /api/register
 #### Projects
     - GET /api/v1/projects
-    - GET /api/v2/projects # with pagination
+    - GET /api/v2/projects
+    - GET api/v2/projects?page=2 # with pagination
 
 Thank You!! :)
